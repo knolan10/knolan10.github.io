@@ -1,0 +1,181 @@
+/* === BODY / CANVAS === */
+
+/* FRONT PAGE orbiting circles */
+body.home {
+    margin: 0;
+    background: #0d0d3e; /* dark blue */
+    overflow: hidden;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body.home .label {
+    position: absolute;           /* absolute positioning */
+    top: 50%;                     /* vertically center */
+    left: 50%;                    /* horizontally center */
+    transform: translate(-50%, -50%); /* truly center it */
+    display: inline-block;         /* prevent weird inline behavior */
+    font-family: 'Major Mono Display', monospace;
+    font-weight: bold;
+    padding: 2px 2px;          /* less horizontal padding */
+    border-radius: 0;             /* square edges */
+    text-align: center;
+    pointer-events: none;
+    font-size: 15px;
+    text-shadow: 0 1.1px 2.2px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    background-color: #d5dbff;
+    color: #111;
+}
+
+/* PAGE 1 */
+body.page1 {
+    background-color: #b6aca6; 
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* PAGE 2 */
+body.page2 {
+    background-color: #8db08f; 
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Canvas for orbiting circles */
+#canvas {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* === CIRCLE CARD === */
+.circle-card {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-card a {
+    position: relative;
+    display: block;
+}
+
+/* Circle images (10% bigger: 150px → 165px, border 5px → 5.5px) */
+.circle-card img {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5.5px solid #d5dbff; /* slightly thicker for visibility */
+    box-shadow: 0 11px 27px rgba(0,0,0,0.15); /* scaled shadow */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect on images */
+.circle-card img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 16px 38px rgba(0,0,0,0.25);
+}
+
+/* Clickable box styles */
+.click-box {
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.click-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Box label (top text) */
+.box-label {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* center horizontally */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4em;
+    z-index: 2;
+    pointer-events: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    max-width: 120px;   /* smaller width */
+    white-space: normal; /* allow wrapping */
+    text-align: center;
+    line-height: 1.2em; /* tighter line spacing */
+}
+
+/* Box content (bottom text) */
+.box-content h2 {
+    margin: 0;
+    font-size: 1.6em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    max-width: 120px;    /* smaller width to stack words */
+    line-height: 1.8em;  /* increase height between lines */
+    word-wrap: break-word; 
+    text-align: center;
+}
+
+
+.box-content h2 {
+    margin: 0;
+    font-size: 1.6em; /* larger story title */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* optional for readability */
+}
+
+/* Make links inside box white and remove underline */
+.click-box a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.click-box a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .click-box {
+        width: 90%;
+        height: 180px;
+    }
+
+    .box-label {
+        font-size: 1.2em;
+    }
+
+    .box-content h2 {
+        font-size: 1.4em;
+    }
+}
+
+/* Header banner */
+.header-banner {
+    width: 100%;                 /* full width */
+    background-color: rgba(0, 0, 0, 0.7); /* dark semi-transparent background */
+    padding: 20px;               /* spacing inside banner */
+    box-sizing: border-box;      /* include padding in width */
+}
+
+.header-banner h1 {
+    margin: 0;                   /* remove default margin */
+    color: #fff;                 /* white text */
+    font-size: 2em;              /* adjust as needed */
+    text-align: left;            /* align text to left */
+    font-family: Georgia, serif;
+}
