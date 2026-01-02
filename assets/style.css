@@ -84,14 +84,14 @@ body.page2 {
 .click-box {
     width: 300px;
     height: 200px;
-    margin: 50px auto;
+    margin: 50px 0 0 50px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     position: relative;
 }
 
@@ -178,4 +178,17 @@ body.page2 {
     font-size: 2em;              /* adjust as needed */
     text-align: left;            /* align text to left */
     font-family: Georgia, serif;
+}
+
+
+/* Image as full page background for page 2 */
+
+.page2 {
+  min-height: 100vh;
+  margin: 0;
+
+  background-image: url("stories_background.jpg");
+  background-size: 115%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
