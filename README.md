@@ -1,3 +1,3 @@
 # kiranolan
 
-professional / personal website.
+professional & personal website.

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Things</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="fake-things">
+
+    <!-- Kelp Forest Love Story box -->
+    <div class="click-box" style="background-image: url('assets/kelp.jpg'); top: 50px; left: 50px; width: 300px; height: 200px;">
+        <a href="https://miraclemonocle.com/articles/kelp-forest-love-story/" target="_blank">
+            <div class="box-content white-text">
+                <h2>Kelp Forest Love Story</h2>
+            </div>
+        </a>
+    </div>
+
+    <!-- My Bookshelf box -->
+    <div class="click-box" style="background-image: url('assets/bookshelf.png'); top: 50px; left: 420px;" onclick="openModal('bookshelf-modal')">
+        <div class="box-content dark-text">
+            <h2>My Bookshelf</h2>
+        </div>
+    </div>
+
+    <!-- Literary Interests box -->
+    <div class="click-box" style="background-image: url('assets/literary.png'); top: 50px; left: 780px;" onclick="openModal('literary-modal')">
+        <div class="box-content dark-text">
+            <h2>Literary Interests</h2>
+        </div>
+    </div>
+
+    <!-- Octopus link -->
+    <a href="https://historicalcharts.noaa.gov/" target="_blank" class="click-box" 
+       style="background-image: url('assets/octopus.png'); bottom: 110px; right: 20px; width: 80px; height: 80px;">
+    </a>
+
+    <!-- Modal for My Bookshelf -->
+    <div id="bookshelf-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('bookshelf-modal')">&times;</span>
+            <h2>My favorite books:</h2>
+            <p>
+            If on a winter's night a traveler by Italo Calvino<br>
+            A Psalm for the Wild-Built by Becky Chambers<br>
+            The Name of the Wind by Patrick Rothfuss<br>
+            The Golden Compass by Philip Pullman<br>
+            The Left Hand of Darkness by Ursula K. Le Guin<br>
+            The City & The City by China Miéville<br>
+            First Test by Tamora Pierce<br>
+            Meet the Austens by Madeleine L'Engle<br>
+            Angle of Repose by Wallace Stegner<br>
+            The Overstory by Richard Powers<br>
+            Cloud Atlas by David Mitchell<br>
+            The Deep by Rivers Solomon<br>
+            A Memory Called Empire by Arkady Martine<br>
+            Red Rising by Pierce Brown<br>
+            Strange Beasts of China by Yan Ge<br>
+            The Lord of the Rings by J.R.R. Tolkien<br>
+            The Parable of the Sower by Octavia E. Butler<br>
+            Into the Wild by Jon Krakauer<br>
+            Black Leopard Red Wolf by Marlon James<br>
+            Light from Uncommon Stars by Ryka Aoki<br>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Modal for Literary Interests -->
+    <div id="literary-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('literary-modal')">&times;</span>
+            <h2>Topics I am interested in:</h2>
+            <p>American Westerns & folklore<br>
+            climate & nature<br>
+            queerness & gender & white women<br>
+            revolutions & cycles & spirals<br>
+            transients & psychogeography<br>
+            emergence & AI<br>
+            steampunk & solarpunk<br>
+            magical realism</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

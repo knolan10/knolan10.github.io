@@ -27,16 +27,16 @@ body.home .label {
     color: #111;
 }
 
-/* PAGE 1 */
-body.page1 {
+/* real things */
+body.realthings {
     background-color: #b6aca6; 
     font-family: Georgia, serif;
     margin: 0;
     padding: 20px;
 }
 
-/* PAGE 2 */
-body.page2 {
+/* fake things */
+body.fake-things {
     background-color: #8db08f; 
     font-family: Georgia, serif;
     margin: 0;
@@ -80,60 +80,107 @@ body.page2 {
     box-shadow: 0 16px 38px rgba(0,0,0,0.25);
 }
 
-/* Clickable box styles */
+/* Header banner */
+.header-banner {
+    width: 100%;                 /* full width */
+    background-color: rgba(0, 0, 0, 0.7); /* dark semi-transparent background */
+    padding: 20px;               /* spacing inside banner */
+    box-sizing: border-box;      /* include padding in width */
+}
+
+.header-banner h1 {
+    margin: 0;                   /* remove default margin */
+    color: #fff;                 /* white text */
+    font-size: 2em;              /* adjust as needed */
+    text-align: left;            /* align text to left */
+    font-family: Georgia, serif;
+}
+
+
+/* Image as full page background for fake things */
+
+.fake-things {
+  min-height: 100vh;
+  margin: 0;
+
+  background-image: url("stories_background.jpg");
+  background-size: 115%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ------------------------
+   Clickable Box Styles
+   Flexible for custom image, text, size, position
+--------------------------- */
 .click-box {
-    width: 300px;
-    height: 200px;
-    margin: 50px 0 0 50px;
+    width: 300px;                /* default width, can override inline */
+    height: 200px;               /* default height */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    background-size: cover;
-    background-position: left;
-    position: relative;
+    background-size: cover;      /* cover the whole box */
+    background-position: center; /* center the image */
+    position: absolute;          /* allows custom placement with top/right/bottom/left */
 }
 
+/* Hover effect */
 .click-box:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
-/* Box label (top text) */
+/* Box label (optional top text) */
 .box-label {
     position: absolute;
-    top: 10px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%); /* center horizontally */
+    transform: translate(-50%, -50%);
     color: #fff;
     font-weight: bold;
     font-size: 1.4em;
     z-index: 2;
     pointer-events: none;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    max-width: 120px;   /* smaller width */
-    white-space: normal; /* allow wrapping */
+    max-width: 80%;   /* responsive width */
+    white-space: normal;
     text-align: center;
-    line-height: 1.2em; /* tighter line spacing */
+    line-height: 1.2em;
 }
 
-/* Box content (bottom text) */
+/* Box content */
+.box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .box-content h2 {
     margin: 0;
     font-size: 1.6em;
+    line-height: 1.4em;
+    word-wrap: break-word;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    max-width: 120px;    /* smaller width to stack words */
-    line-height: 1.8em;  /* increase height between lines */
-    word-wrap: break-word; 
-    text-align: center;
 }
 
+/*Custom text color for better contrast */
+.white-text {
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.9);
+}
 
-.box-content h2 {
-    margin: 0;
-    font-size: 1.6em; /* larger story title */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* optional for readability */
+.dark-text {
+    color: #444; /* dark text */
+    text-shadow: none; /* remove shadow for dark text */
 }
 
 /* Make links inside box white and remove underline */
@@ -164,31 +211,44 @@ body.page2 {
     }
 }
 
-/* Header banner */
-.header-banner {
-    width: 100%;                 /* full width */
-    background-color: rgba(0, 0, 0, 0.7); /* dark semi-transparent background */
-    padding: 20px;               /* spacing inside banner */
-    box-sizing: border-box;      /* include padding in width */
+/* ------------------------
+   Modal Styles
+--------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* semi-transparent overlay */
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* on top of everything */
 }
 
-.header-banner h1 {
-    margin: 0;                   /* remove default margin */
-    color: #fff;                 /* white text */
-    font-size: 2em;              /* adjust as needed */
-    text-align: left;            /* align text to left */
-    font-family: Georgia, serif;
+.modal-content {
+    background: #fff;
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
 }
 
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-/* Image as full page background for page 2 */
-
-.page2 {
-  min-height: 100vh;
-  margin: 0;
-
-  background-image: url("stories_background.jpg");
-  background-size: 115%;
-  background-position: center;
-  background-repeat: no-repeat;
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
 }
